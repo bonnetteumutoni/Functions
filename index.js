@@ -14,15 +14,13 @@ console.log(strings(["fruits","Banana","egg","time"]));
  console.log(evenNums([12,13,7,24]))
  
  //Create a function that takes an array of student objects with name and score properties and returns a new array containing only the names of students who scored above 75.
- function score(nameScores){
-    for(let i=0;i<nameScores.length;i++){
-     for(let j=0;j<nameScores[i].length;j++){
-        if(nameScores[i][j]>75){
-            return nameScores[i];
-          } 
-    }}}
+ function score(grade){
+    const scoreMarks=grade.filter(item => item.score>75)
+    const name = scoreMarks.map(item => item.name);
+    return name;
+}
  
- console.log(score([["hdg",78],["ellen",57]]));
+console.log(score([{name:"Timmy", score:90},{name:"Mary",score:45}, {name:"Line",score:79}]));
 
  //Write a function that accepts an array of numbers and returns a new array with each number squared using the map() method.
  function square(squared){
